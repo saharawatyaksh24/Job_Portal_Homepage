@@ -1,0 +1,40 @@
+h1{
+    font-size : larger
+}
+.div1{
+    border : 2px solid red;
+    margin: 10px;
+margin: auto;
+margin: 10px 20px;
+
+
+}
+#div2{
+    border : 2px;
+    border-color: blue;
+    border-style: solid;
+    padding: 10px;
+padding: 10px 20px;
+padding: 10px 20px 30px 40px;
+margin: 10px;
+margin: auto;
+margin: 10px 20px;
+
+
+}
+.div3{
+    
+    border: 2px solid blue;
+border-width: 3px;
+border-style: dashed;
+border-color: red;
+padding: 10px;
+padding: 10px 20px;
+padding: 10px 20px 30px 40px;
+margin: 10px;
+margin: auto;
+margin: 10px 20px;
+
+
+
+}
