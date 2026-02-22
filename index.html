@@ -2,33 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Job Portal</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        h1 {
-            color: blueviolet;
-        }
-    </style>
 </head>
 <body>
 
-<div class="div1">
-    <h1>this is the first day of learning css</h1>
-    
-    <p>hello</p>
-</div>
-<br>
-<div id="div2">
-    <h2>WELCOME</h2>
-</div>
-<br>
-<div class ="div3">
-    <p>This is the front page of a job portal system which we use to make a fully functional home page</p>
+<!-- ===== HEADER ===== -->
+<header class="navbar">
+    <div class="logo">JobPortal</div>
+    <nav>
+        <a href="#">Jobs</a>
+        <a href="#">Companies</a>
+        <a href="#">Post a Job</a>
+    </nav>
+    <div class="auth">
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+    </div>
+</header>
 
-</div>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+    <h1>Find Your Dream Job</h1>
+    <p>Search jobs by skill, location, or company</p>
+
+    <div class="search-box">
+        <input type="text" id="jobInput" placeholder="Job title or skill">
+        <input type="text" id="locationInput" placeholder="Location">
+        <button onclick="searchJobs()">Search</button>
+    </div>
+</section>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="categories">
+    <h2>Popular Categories</h2>
+
+    <div class="category-grid">
+        <div class="card">IT & Software</div>
+        <div class="card">Marketing</div>
+        <div class="card">Finance</div>
+        <div class="card">Design</div>
+        <div class="card">Engineering</div>
+        <div class="card">Healthcare</div>
+    </div>
+</section>
+
+<!-- ===== JOBS ===== -->
+<section class="jobs">
+    <h2>Featured Jobs</h2>
+
+    <div class="job-list" id="jobList">
+
+        <div class="job-card">
+            <h3>Frontend Developer</h3>
+            <p>Company: Google</p>
+            <p>Location: Remote</p>
+            <button onclick="applyJob('Frontend Developer')">Apply Now</button>
+        </div>
+
+        <div class="job-card">
+            <h3>Backend Developer</h3>
+            <p>Company: Amazon</p>
+            <p>Location: Bangalore</p>
+            <button onclick="applyJob('Backend Developer')">Apply Now</button>
+        </div>
+
+        <div class="job-card">
+            <h3>Data Analyst</h3>
+            <p>Company: Microsoft</p>
+            <p>Location: Hyderabad</p>
+            <button onclick="applyJob('Data Analyst')">Apply Now</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== COMPANIES ===== -->
+<section class="companies">
+    <h2>Top Companies Hiring</h2>
+
+    <div class="company-logos">
+        <div class="company">Google</div>
+        <div class="company">Amazon</div>
+        <div class="company">Microsoft</div>
+        <div class="company">Meta</div>
+        <div class="company">Netflix</div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2026 JobPortal. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,40 +1,153 @@
-h1{
-    font-size : larger
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.div1{
-    border : 2px solid red;
-    margin: 10px;
-margin: auto;
-margin: 10px 20px;
 
-
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
 }
-#div2{
-    border : 2px;
-    border-color: blue;
-    border-style: solid;
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #0a66c2;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.auth button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.login {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.signup {
+    background: white;
+    color: #0a66c2;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #0a66c2, #004182);
+    color: white;
+}
+
+.search-box {
+    margin-top: 20px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 250px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    background: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ===== CATEGORIES ===== */
+.categories {
+    padding: 50px;
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* ===== JOBS ===== */
+.jobs {
+    padding: 50px;
+    text-align: center;
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.job-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.job-card button {
+    margin-top: 10px;
     padding: 10px;
-padding: 10px 20px;
-padding: 10px 20px 30px 40px;
-margin: 10px;
-margin: auto;
-margin: 10px 20px;
-
-
+    background: #0a66c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
-.div3{
-    
-    border: 2px solid blue;
-border-width: 3px;
-border-style: dashed;
-border-color: red;
-padding: 10px;
-padding: 10px 20px;
-padding: 10px 20px 30px 40px;
-margin: 10px;
-margin: auto;
-margin: 10px 20px;
 
+/* ===== COMPANIES ===== */
+.companies {
+    padding: 50px;
+    text-align: center;
+}
 
+.company-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.company {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #0a66c2;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }
