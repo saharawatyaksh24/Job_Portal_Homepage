@@ -27,10 +27,33 @@
     <p>Search jobs by skill, location, or company</p>
 
     <div class="search-box">
-        <input type="text" id="jobInput" placeholder="Job title or skill">
-        <input type="text" id="locationInput" placeholder="Location">
-        <button onclick="searchJobs()">Search</button>
+        <input type="text" id="searchRole" placeholder="Job title or skill">
+        <input type="text" id="searchLocation" placeholder="Location">
+        <button id="searchBtn">Search</button>
     </div>
+</section>
+
+<!-- ===== PUBLISH JOB SECTION ===== -->
+<section class="publish-job" style="padding:40px; text-align:center;">
+
+    <h2>Post a Job</h2>
+
+    <input type="text" id="company" placeholder="Company Name">
+    <input type="text" id="role" placeholder="Job Role">
+    <input type="text" id="location" placeholder="Location">
+
+    <select id="type">
+        <option value="">Select Job Type</option>
+        <option>Full-time</option>
+        <option>Part-time</option>
+        <option>Internship</option>
+        <option>Remote</option>
+    </select>
+
+    <br><br>
+
+    <button id="publishBtn">Publish Job</button>
+
 </section>
 
 <!-- ===== CATEGORIES ===== -->
@@ -47,16 +70,29 @@
     </div>
 </section>
 
-<!-- ===== JOBS ===== -->
+<!-- ===== AVAILABLE JOBS ===== -->
 <section class="jobs">
+
+    <h2>Available Job Opportunities</h2>
+
+    <div id="jobContainer" class="job-list">
+        <!-- Dynamic job cards appear here -->
+    </div>
+
+</section>
+
+<!-- ===== FEATURED JOBS (STATIC DEFAULT JOBS) ===== -->
+<section class="jobs">
+
     <h2>Featured Jobs</h2>
 
-    <div class="job-list" id="jobList">
+    <div class="job-list">
 
         <div class="job-card">
             <h3>Frontend Developer</h3>
             <p>Company: Google</p>
             <p>Location: Remote</p>
+            <p>Type: Full-time</p>
             <button onclick="applyJob('Frontend Developer')">Apply Now</button>
         </div>
 
@@ -64,6 +100,7 @@
             <h3>Backend Developer</h3>
             <p>Company: Amazon</p>
             <p>Location: Bangalore</p>
+            <p>Type: Full-time</p>
             <button onclick="applyJob('Backend Developer')">Apply Now</button>
         </div>
 
@@ -71,6 +108,7 @@
             <h3>Data Analyst</h3>
             <p>Company: Microsoft</p>
             <p>Location: Hyderabad</p>
+            <p>Type: Full-time</p>
             <button onclick="applyJob('Data Analyst')">Apply Now</button>
         </div>
 
@@ -80,6 +118,7 @@
 
 <!-- ===== COMPANIES ===== -->
 <section class="companies">
+
     <h2>Top Companies Hiring</h2>
 
     <div class="company-logos">
@@ -89,6 +128,7 @@
         <div class="company">Meta</div>
         <div class="company">Netflix</div>
     </div>
+
 </section>
 
 <!-- ===== FOOTER ===== -->

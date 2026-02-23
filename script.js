@@ -1,80 +1,97 @@
-// ===== JOB DATA =====
-console.log("JavaScript is connected successfully!");
-const jobs = [
-    {
-        title: "Frontend Developer",
-        company: "Google",
-        location: "Remote"
-    },
-    {
-        title: "Backend Developer",
-        company: "Amazon",
-        location: "Bangalore"
-    },
-    {
-        title: "Data Analyst",
-        company: "Microsoft",
-        location: "Hyderabad"
-    },
-    {
-        title: "Java Developer",
-        company: "Infosys",
-        location: "Delhi"
-    },
-    {
-        title: "Full Stack Developer",
-        company: "TCS",
-        location: "Mumbai"
-    }
-];
+// store jobs
+let jobs = [];
+
+// buttons
+let publishBtn = document.getElementById("publishBtn");
+let searchBtn = document.getElementById("searchBtn");
+
+// container for cards
+let jobContainer = document.getElementById("jobContainer");
 
 
-// ===== SEARCH FUNCTION =====
-function searchJobs() {
+// ===== PUBLISH JOB =====
+publishBtn.addEventListener("click", function () {
 
-    
-    const jobInput = document.getElementById("jobInput").value.toLowerCase();
-    const locationInput = document.getElementById("locationInput").value.toLowerCase();
+    let company = document.getElementById("company").value;
+    let role = document.getElementById("role").value;
+    let location = document.getElementById("location").value;
+    let type = document.getElementById("type").value;
 
-
-    const jobList = document.getElementById("jobList");
-
-    
-    jobList.innerHTML = "";
-
-    
-    const filteredJobs = jobs.filter(job =>
-        job.title.toLowerCase().includes(jobInput) &&
-        job.location.toLowerCase().includes(locationInput)
-    );
-
-    
-    if (filteredJobs.length === 0) {
-        jobList.innerHTML = "<p>No jobs found</p>";
+    if (company === "" || role === "" || location === "" || type === "") {
+        alert("Please fill all fields");
         return;
     }
 
-    
-    filteredJobs.forEach(job => {
+    let job = {
+        company: company,
+        role: role,
+        location: location,
+        type: type
+    };
 
-        const jobCard = document.createElement("div");
+    jobs.push(job);
 
-        jobCard.classList.add("job-card");
+    displayJobs(jobs);
 
-        jobCard.innerHTML = `
-            <h3>${job.title}</h3>
-            <p>Company: ${job.company}</p>
-            <p>Location: ${job.location}</p>
-            <button onclick="applyJob('${job.title}')">Apply Now</button>
-        `;
+    // clear input
+    document.getElementById("company").value = "";
+    document.getElementById("role").value = "";
+    document.getElementById("location").value = "";
+    document.getElementById("type").value = "";
 
-        jobList.appendChild(jobCard);
+});
+
+
+// ===== SEARCH JOB =====
+searchBtn.addEventListener("click", function () {
+
+    let searchRole = document.getElementById("searchRole").value.toLowerCase();
+    let searchLocation = document.getElementById("searchLocation").value.toLowerCase();
+
+    let filteredJobs = jobs.filter(function (job) {
+
+        return job.role.toLowerCase().includes(searchRole) &&
+               job.location.toLowerCase().includes(searchLocation);
 
     });
+
+    displayJobs(filteredJobs);
+
+});
+
+
+// ===== DISPLAY JOB CARDS =====
+function displayJobs(jobList) {
+
+    jobContainer.innerHTML = "";
+
+    if (jobList.length === 0) {
+        jobContainer.innerHTML = "<p>No jobs found</p>";
+        return;
+    }
+
+    jobList.forEach(function (job) {
+
+        let card = document.createElement("div");
+
+        card.classList.add("job-card");
+
+        card.innerHTML = `
+            <h3>${job.role}</h3>
+            <p><strong>Company:</strong> ${job.company}</p>
+            <p><strong>Location:</strong> ${job.location}</p>
+            <p><strong>Type:</strong> ${job.type}</p>
+            <button onclick="applyJob('${job.role}')">Apply Now</button>
+        `;
+
+        jobContainer.appendChild(card);
+
+    });
+
 }
 
 
-
-function applyJob(jobTitle) {
-    alert("You applied for: " + jobTitle);
+// ===== APPLY FUNCTION =====
+function applyJob(role) {
+    alert("Applied for " + role);
 }
